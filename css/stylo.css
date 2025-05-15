@@ -1,0 +1,233 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,100,300,400italic,700|EB+Garamond);
+
+.menu {
+  display: flex;
+  list-style-type: none;
+  padding: 11px;
+  justify-content: center;
+}
+.menu li a{
+  font-size: 15px;
+  text-decoration: none;
+  color: #6EC6D8;
+  margin-left: 25px;
+}
+
+.menu li a :hover{
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    color: aliceblue;
+    text-align: center;
+    background: url(../imagen/fondo2.gif) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 10%;
+  }
+
+  .hero1 {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    color: aliceblue;
+    text-align: center;
+    background: url(../imagen/fondo2.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 10%;
+  }
+
+  .hero2 {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    color: aliceblue;
+    text-align: center;
+    background: url(../imagen/vial2.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 10%;
+  }
+  .hero3 {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    color: aliceblue;
+    text-align: center;
+    background: url(../imagen/cuenca.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 10%;
+  }
+
+  .hero4 {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    color: aliceblue;
+    text-align: center;
+    background: url(../imagen/comunicacion.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 10%;
+  }
+  h1#title-1 {
+    text-align: center;
+    font-size: 80px;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'EB Garamond', serif;
+    text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 1);
+    text-transform: uppercase;
+    letter-spacing: 10px;
+
+  }
+
+ h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  color: #3c77ff;
+  font-size: 40px;
+  text-align: center;
+  padding-top:  25px;
+
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  color: #000000;
+  font-size: 30px;
+  text-align: center;
+  padding-top:  25px;
+}
+ 
+/* animacion de entrada */
+@keyframes scroll {
+  from {
+    opacity: 0;
+    scale: 10%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+.contenedor,h2,.titulo,.contenido {
+  view-timeline-name: --texto;
+  view-timeline-axis: block;
+  animation-timeline: --texto;
+  animation-name: scroll;
+  animation-range: entry 10% cover 50%;
+  animation-fill-mode: both;
+}
+
+.boton {
+  text-decoration: none;
+  display: block;
+  
+  font-weight: 700;
+  background-color: #6EC6D8;
+  border-radius: 10px;
+  padding: 4px 15px;
+  color: #000000;
+  text-align: center;
+  
+}
+
+
+.contenedor {
+  display: flex;
+  padding: 15px;
+}
+
+.contenedor img {
+  width: 700px;
+  padding: 30px;
+}
+
+p {
+  font-size: 25;
+  text-align: justify;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  padding: 15px;
+}
+
+.titulo {
+  font-size: 60px;
+  padding: 30px;
+  color: rgb(255, 255, 255);
+  font-family: georgia;
+}
+
+
+.iconfullbox {
+  position: relative;
+  width: 100%;
+}
+
+.iconfull {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+}
+
+
+#map {
+  display: flex;
+  margin: auto;
+  width: 75%;
+  height: 670px;
+  border-color: rgb(158, 158, 158);
+  border: 1px;
+  border-style: solid;
+ 
+}
+
+.pregunta {
+  height: 60px;
+  width: 950px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(5, 173, 149 );
+  padding: 10px 10px 10px 10px;
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+  transition: .4s;
+  margin-left: 15%;
+  cursor: pointer;
+
+}
+
+.respuesta {
+  width: 950px;
+  align-items: center;
+  border-radius: 8px;
+  background: rgb(255, 255, 255);
+  padding: 8px;
+  color: rgb(0, 0, 0);
+  font-size: 17px;
+  margin-left: 15%;
+  margin-top: -1px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  text-align: justify;
+}

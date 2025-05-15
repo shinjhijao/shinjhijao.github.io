@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELCN</title>
+
+
+    <link rel="stylesheet" href="css/stylo.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+     <!-- Incluir select2 CSS y JS -->
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+      <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+</head>
+<body>
+
+    <script src="data/reporteN_0.js"></script>
+
+    <section>
+      <div style="background-color:#383838;height: 50px;">
+        <ul class="menu">
+          <a href="formularios.html" style="margin-right: 30%; color: rgb(255, 255, 255); text-decoration: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-fill-exclamation" viewBox="0 0 16 16">
+                <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4"/>
+                <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-3.5-2a.5.5 0 0 0-.5.5v1.5a.5.5 0 0 0 1 0V11a.5.5 0 0 0-.5-.5m0 4a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"/>
+              </svg>Identificarse</a>
+          <li>
+            <a  href="index.html"><strong>INICIO</strong></a>
+          </li>
+          <li>
+            <a  href="AreaEconomica.html"><b>ÁREA ECONÓMICA</b></a>
+          </li>
+          <li>
+            <a style="color: rgb(255, 255, 255); " href="Vialidad.html"><b>COMUNICACIÓN Y VIALIDAD</b></a>
+          </li>
+          <li>
+            <a href="Cuenca.html"><b>CUENCAS</b></a>
+          </li>
+          <li>
+            <a href="naturales.html"><b>  RECURSOS NATURALES</b></a>
+          </li>
+       
+          <li>
+            <a href="preguntas.html"><b>PREGUNTAS</a>
+          </li>
+        </ul>
+      </div>
+
+
+          
+        <div class="hero2">
+            <img style="display: block; margin: auto; width: 300px;" src="imagen/fam.png" alt="">
+            <span style="color: rgb(0, 0, 0); font-size: 60px; font-family: 'Roboto', sans-serif;" >Geovisor Comunicación y Vialidad</span>
+
+
+        </div>
+    </section>
+
+    <section style="margin-left: 10%;">
+      <h3>RESULTADO DE LOS MUNICIPIOS</h3>
+          <p>Porfavor Seleccione un municipio de interes para visualizarlo en el mapa:</p>
+
+        <div id="select-location">
+            <select name="location" id="municipioSelect" onchange="acercarMunicipio()">
+                <option value="'1">Seleccione un Municipio</option>
+                <option value="Magdalena">BENI, Magdalena</option>
+                <option value="Huacaraje">BENI, Huacaraje</option>
+                <option value="Reyes">BENI, Reyes</option>
+                <option value="Santa_Rosa">BENI, Santa Rosa</option>
+                <option value="Puerto_Siles">BENI, Puerto Siles</option>
+                <option value="Exaltación">BENI, Exaltación</option>
+                <option value="Baures">BENI, Baures</option>
+                <option value="San_Andrés">BENI, San Andrés</option>
+                <option value="Loreto">BENI, Loreto</option>
+                <option value="San_Javier">BENI, San Javier</option>
+                <option value="San_Joaquín">BENI, San Joaquín</option>
+                <option value="San_Ramón">BENI, San Ramón</option>
+                <option value="Territorio_Indigena_Multietnico">BENI, TIOC-Territorio Indigena Multietnico</option>
+                <option value="Rurrenabaque">BENI, Rurrenabaque</option>
+                <option value="San_Borja">BENI, San Borja</option>
+                <option value="Riberalta">BENI, Riberalta</option>
+                <option value="Guayaramerin">BENI, Guayaramerin</option>
+                <option value="Trinidad">BENI, Trinidad</option>
+                <option value="Santa_Ana_del_Yacuma">BENI, Santa Ana del Yacuma</option>
+                <option value="San_Ignacio_de_Moxos">BENI, San Ignacio de Moxos</option>
+                <option value="Poroma">CHUQUISACA, Poroma</option>
+                <option value="Tarabuco">CHUQUISACA, Tarabuco</option>
+                <option value="Yamparáez">CHUQUISACA, Yamparáez</option>
+                <option value="Yotala">CHUQUISACA, Yotala</option>
+                <option value="Icla">CHUQUISACA, Icla</option>
+                <option value="Tarvita">CHUQUISACA, Tarvita</option>
+                <option value="San_Lucas">CHUQUISACA, San Lucas</option>
+                <option value="Camargo">CHUQUISACA, Camargo</option>
+                <option value="Azurduy">CHUQUISACA, Azurduy</option>
+                <option value="El_Villar">CHUQUISACA, El Villar</option>
+                <option value="Villa_Abecia">CHUQUISACA, Villa Abecia</option>
+                <option value="Las_Carreras">CHUQUISACA, Las Carreras</option>
+                <option value="Huacareta">CHUQUISACA, Huacareta</option>
+                <option value="Monteagudo">CHUQUISACA, Monteagudo</option>
+                <option value="Alcalá">CHUQUISACA, Alcalá</option>
+                <option value="Sopachuy">CHUQUISACA, Sopachuy</option>
+                <option value="Tomina">CHUQUISACA, Tomina</option>
+                <option value="Zudañez">CHUQUISACA, Zudañez</option>
+                <option value="Mojocoya">CHUQUISACA, Mojocoya</option>
+                <option value="Villa_Serrano">CHUQUISACA, Villa Serrano</option>
+                <option value="Presto">CHUQUISACA, Presto</option>
+                <option value="Culpina">CHUQUISACA, Culpina</option>
+                <option value="Incahuasi">CHUQUISACA, Incahuasi</option>
+                <option value="Villa_Charcas">CHUQUISACA, Villa Charcas</option>
+                <option value="Macharetí">CHUQUISACA, Macharetí</option>
+                <option value="TIOC_Guarani_Chaqueño_de_Huacaya">CHUQUISACA, TIOC Guarani Chaqueño de Huacaya</option>
+                <option value="Padilla">CHUQUISACA, Padilla</option>
+                <option value="Villa_Vaca_Guzmán">CHUQUISACA, Villa Vaca Guzmán</option>
+                <option value="Sucre">CHUQUISACA, Sucre</option>
+                <option value="Tarata">COCHABAMBA, Tarata</option>
+                <option value="Totora">COCHABAMBA, Totora</option>
+                <option value="Morochata">COCHABAMBA, Morochata</option>
+                <option value="Aiquile">COCHABAMBA, Aiquile</option>
+                <option value="Sacabamba">COCHABAMBA, Sacabamba</option>
+                <option value="Anzaldo">COCHABAMBA, Anzaldo</option>
+                <option value="Toco">COCHABAMBA, Toco</option>
+                <option value="Villa_Gualberto_Villarroel">COCHABAMBA, Villa Gualberto Villarroel</option>
+                <option value="Tacachi">COCHABAMBA, Tacachi</option>
+                <option value="Villa_Rivero">COCHABAMBA, Villa Rivero</option>
+                <option value="Cliza">COCHABAMBA, Cliza</option>
+                <option value="Tacopaya">COCHABAMBA, Tacopaya</option>
+                <option value="Sicaya">COCHABAMBA, Sicaya</option>
+                <option value="Capinota">COCHABAMBA, Capinota</option>
+                <option value="Arque">COCHABAMBA, Arque</option>
+                <option value="Santivañez">COCHABAMBA, Santivañez</option>
+                <option value="Tolata">COCHABAMBA, Tolata</option>
+                <option value="Arbieto">COCHABAMBA, Arbieto</option>
+                <option value="Arani">COCHABAMBA, Arani</option>
+                <option value="San_Benito">COCHABAMBA, San Benito</option>
+                <option value="Tapacarí">COCHABAMBA, Tapacarí</option>
+                <option value="Bolivar">COCHABAMBA, Bolivar</option>
+                <option value="Cocapata">COCHABAMBA, Cocapata</option>
+                <option value="Omereque">COCHABAMBA, Omereque</option>
+                <option value="Vacas">COCHABAMBA, Vacas</option>
+                <option value="Pocona">COCHABAMBA, Pocona</option>
+                <option value="Puerto_Villarroel">COCHABAMBA, Puerto Villarroel</option>
+                <option value="Villa_Tunari">COCHABAMBA, Villa Tunari</option>
+                <option value="Chimoré">COCHABAMBA, Chimoré</option>
+                <option value="Tiraque">COCHABAMBA, Tiraque</option>
+                <option value="Shinahota">COCHABAMBA, Shinahota</option>
+                <option value="Ayopaya">COCHABAMBA, Ayopaya</option>
+                <option value="Pojo">COCHABAMBA, Pojo</option>
+                <option value="Entre_Ríos">COCHABAMBA, Entre Ríos</option>
+                <option value="Colomi">COCHABAMBA, Colomi</option>
+                <option value="Alalay">COCHABAMBA, Alalay</option>
+                <option value="Vila_Vila">COCHABAMBA, Vila Vila</option>
+                <option value="Pasorapa">COCHABAMBA, Pasorapa</option>
+                <option value="Mizque">COCHABAMBA, Mizque</option>
+                <option value="Raqaypampa">COCHABAMBA, TIOC-Raqaypampa</option>
+                <option value="Quillacollo">COCHABAMBA, Quillacollo</option>
+                <option value="Sacaba">COCHABAMBA, Sacaba</option>
+                <option value="Tiquipaya">COCHABAMBA, Tiquipaya</option>
+                <option value="Colcapirhua">COCHABAMBA, Colcapirhua</option>
+                <option value="Sipe_Sipe">COCHABAMBA, Sipe Sipe</option>
+                <option value="Vinto">COCHABAMBA, Vinto</option>
+                <option value="Cochabamba">COCHABAMBA, Cochabamba</option>
+                <option value="Punata">COCHABAMBA, Punata</option>
+                <option value="San_Pedro_de_Curahuara">LA PAZ, San Pedro de Curahuara</option>
+                <option value="Chacarilla">LA PAZ, Chacarilla</option>
+                <option value="Papel_Pampa">LA PAZ, Papel Pampa</option>
+                <option value="Colquiri">LA PAZ, Colquiri</option>
+                <option value="Santiago_de_Callapa">LA PAZ, Santiago de Callapa</option>
+                <option value="Catacora">LA PAZ, Catacora</option>
+                <option value="Yaco">LA PAZ, Yaco</option>
+                <option value="Calacoto">LA PAZ, Calacoto</option>
+                <option value="Collana">LA PAZ, Collana</option>
+                <option value="Calamarca">LA PAZ, Calamarca</option>
+                <option value="Colquencha">LA PAZ, Colquencha</option>
+                <option value="Corocoro">LA PAZ, Corocoro</option>
+                <option value="Santiago_de_Machaca">LA PAZ, Santiago de Machaca</option>
+                <option value="Nazacara_de_Pacajes">LA PAZ, Nazacara de Pacajes</option>
+                <option value="Caquiaviri">LA PAZ, Caquiaviri</option>
+                <option value="Luribay">LA PAZ, Luribay</option>
+                <option value="Malla">LA PAZ, Malla</option>
+                <option value="Comanche">LA PAZ, Comanche</option>
+                <option value="Sapahaqui">LA PAZ, Sapahaqui</option>
+                <option value="Cairoma">LA PAZ, Cairoma</option>
+                <option value="Ichoca">LA PAZ, Ichoca</option>
+                <option value="Villa_Libertad_Licoma">LA PAZ, Villa Libertad Licoma</option>
+                <option value="Quime">LA PAZ, Quime</option>
+                <option value="Laja">LA PAZ, Laja</option>
+                <option value="Ayo_Ayo">LA PAZ, Ayo Ayo</option>
+                <option value="Umala">LA PAZ, Umala</option>
+                <option value="Sicasica">LA PAZ, Sicasica</option>
+                <option value="Palca">LA PAZ, Palca</option>
+                <option value="Yanacachi">LA PAZ, Yanacachi</option>
+                <option value="Desaguadero">LA PAZ, Desaguadero</option>
+                <option value="Jesús_de_Machaka">LA PAZ, Jesús de Machaka</option>
+                <option value="Puerto_Mayor_de_Guaqui">LA PAZ, Puerto Mayor de Guaqui</option>
+                <option value="Tito_Yupanqui">LA PAZ, Tito Yupanqui</option>
+                <option value="Pucarani">LA PAZ, Pucarani</option>
+                <option value="Combaya">LA PAZ, Combaya</option>
+                <option value="Coroico">LA PAZ, Coroico</option>
+                <option value="Coripata">LA PAZ, Coripata</option>
+                <option value="Quiabaya">LA PAZ, Quiabaya</option>
+                <option value="Aucapata">LA PAZ, Aucapata</option>
+                <option value="Tipuani">LA PAZ, Tipuani</option>
+                <option value="Sorata">LA PAZ, Sorata</option>
+                <option value="La_Asunta">LA PAZ, La Asunta</option>
+                <option value="Chuma">LA PAZ, Chuma</option>
+                <option value="Guanay">LA PAZ, Guanay</option>
+                <option value="Teoponte">LA PAZ, Teoponte</option>
+                <option value="Mapiri">LA PAZ, Mapiri</option>
+                <option value="Curva">LA PAZ, Curva</option>
+                <option value="Pelechuco">LA PAZ, Pelechuco</option>
+                <option value="Palos_Blancos">LA PAZ, Palos Blancos</option>
+                <option value="San_Buenaventura">LA PAZ, San Buenaventura</option>
+                <option value="Mocomoco">LA PAZ, Mocomoco</option>
+                <option value="Santiago_de_Huata">LA PAZ, Santiago de Huata</option>
+                <option value="Puerto_Pérez">LA PAZ, Puerto Pérez</option>
+                <option value="Alto_Beni">LA PAZ, Alto Beni</option>
+                <option value="Huarina">LA PAZ, Huarina</option>
+                <option value="Huatajata">LA PAZ, Huatajata</option>
+                <option value="Apolo">LA PAZ, Apolo</option>
+                <option value="Chua_Cocani">LA PAZ, Chua Cocani</option>
+                <option value="Villa_Ancoraimes">LA PAZ, Villa Ancoraimes</option>
+                <option value="Puerto_Mayor_de_Carabuco">LA PAZ, Puerto Mayor de Carabuco</option>
+                <option value="Batallas">LA PAZ, Batallas</option>
+                <option value="Copacabana">LA PAZ, Copacabana</option>
+                <option value="Tacacoma">LA PAZ, Tacacoma</option>
+                <option value="Humanata">LA PAZ, Humanata</option>
+                <option value="San_Pedro_de_Tiquina">LA PAZ, San Pedro de Tiquina</option>
+                <option value="Ixiamas">LA PAZ, Ixiamas</option>
+                <option value="Ayata">LA PAZ, Ayata</option>
+                <option value="Waldo_Ballivian">LA PAZ, Waldo Ballivian</option>
+                <option value="Cajuata">LA PAZ, Cajuata</option>
+                <option value="Inquisivi">LA PAZ, Inquisivi</option>
+                <option value="Irupana">LA PAZ, Irupana</option>
+                <option value="Chulumani">LA PAZ, Chulumani</option>
+                <option value="Tiahuanacu">LA PAZ, Tiahuanacu</option>
+                <option value="Puerto_Acosta">LA PAZ, Puerto Acosta</option>
+                <option value="Escoma">LA PAZ, Escoma</option>
+                <option value="Charaña">LA PAZ, Charaña</option>
+                <option value="Achacachi">LA PAZ, Achacachi</option>
+                <option value="Taraco">LA PAZ, Taraco</option>
+                <option value="San_Andrés_de_Machaca">LA PAZ, La (Marka) San Andrés de Machaca</option>
+                <option value="Mecapaca">LA PAZ, Mecapaca</option>
+                <option value="Charazani">LA PAZ, Charazani</option>
+                <option value="Viacha">LA PAZ, Viacha</option>
+                <option value="Patacamaya">LA PAZ, Patacamaya</option>
+                <option value="Achocalla">LA PAZ, Achocalla</option>
+                <option value="El_Alto">LA PAZ, El Alto</option>
+                <option value="Nuestra_Señora_de_La_Paz">LA PAZ, Nuestra Señora de La Paz</option>
+                <option value="Caranavi">LA PAZ, Caranavi</option>
+                <option value="Todos_Santos">ORURO, Todos Santos</option>
+                <option value="La_Rivera">ORURO, La Rivera</option>
+                <option value="Carangas">ORURO, Carangas</option>
+                <option value="Yunguyo_del_Litoral">ORURO, Yunguyo del Litoral</option>
+                <option value="Huachacalla">ORURO, Huachacalla</option>
+                <option value="Esmeralda">ORURO, Esmeralda</option>
+                <option value="Santuario_de_Quillacas">ORURO, Santuario de Quillacas</option>
+                <option value="Pampa_Aullagas">ORURO, Pampa Aullagas</option>
+                <option value="Santiago_de_Huari">ORURO, Santiago de Huari</option>
+                <option value="Pazña">ORURO, Pazña</option>
+                <option value="Cruz_de_Machacamarca">ORURO, Cruz de Machacamarca</option>
+                <option value="Antequera">ORURO, Antequera</option>
+                <option value="Corque">ORURO, Corque</option>
+                <option value="Machacamarca">ORURO, Machacamarca</option>
+                <option value="El_Choro">ORURO, El Choro</option>
+                <option value="Toledo">ORURO, Toledo</option>
+                <option value="Santiago_de_Huayllamarca">ORURO, Santiago de Huayllamarca</option>
+                <option value="Paria">ORURO, Paria</option>
+                <option value="Eucaliptus">ORURO, Eucaliptus</option>
+                <option value="Caracollo">ORURO, Caracollo</option>
+                <option value="Sabaya">ORURO, Sabaya</option>
+                <option value="Curahuara_de_Carangas">ORURO, Curahuara de Carangas</option>
+                <option value="Choquecota">ORURO, Choquecota</option>
+                <option value="Poopó">ORURO, Poopó</option>
+                <option value="Escara">ORURO, Escara</option>
+                <option value="Totora">ORURO, Totora</option>
+                <option value="Turco">ORURO, Turco</option>
+                <option value="Coipasa">ORURO, Coipasa</option>
+                <option value="Uru_Chipaya">ORURO, Uru Chipaya</option>
+                <option value="Salinas_de_Garci_Mendoza">ORURO, Salinas de Garci Mendoza</option>
+                <option value="Belén_de_Andamarca">ORURO, Belén de Andamarca</option>
+                <option value="Andamarca">ORURO, Andamarca</option>
+                <option value="Huanuni">ORURO, Huanuni</option>
+                <option value="Oruro">ORURO, Oruro</option>
+                <option value="Challapata">ORURO, Challapata</option>
+                <option value="Bolpebra">PANDO, Bolpebra</option>
+                <option value="Filadelfia">PANDO, Filadelfia</option>
+                <option value="Porvenir">PANDO, Porvenir</option>
+                <option value="Sena">PANDO, Sena</option>
+                <option value="San_Lorenzo">PANDO, San Lorenzo</option>
+                <option value="Puerto_Gonzalo_Moreno">PANDO, Puerto Gonzalo Moreno</option>
+                <option value="Bella_Flor">PANDO, Bella Flor</option>
+                <option value="San_Pedro">PANDO, San Pedro</option>
+                <option value="Puerto_Rico">PANDO, Puerto Rico</option>
+                <option value="Santa_Rosa">PANDO, Santa Rosa</option>
+                <option value="Ingavi">PANDO, Ingavi</option>
+                <option value="Villa_Nueva">PANDO, Villa Nueva</option>
+                <option value="Santos_Mercado">PANDO, Santos Mercado</option>
+                <option value="Nueva_Esperanza">PANDO, Nueva Esperanza</option>
+                <option value="Cobija">PANDO, Cobija</option>
+                <option value="San_Pedro_de_Macha">POTOSI, San Pedro de Macha</option>
+                <option value="Pocoata">POTOSI, Pocoata</option>
+                <option value="Llica">POTOSI, Llica</option>
+                <option value="San_Antonio_de_Esmoruco">POTOSI, San Antonio de Esmoruco</option>
+                <option value="Mojinete">POTOSI, Mojinete</option>
+                <option value="San_Agustín">POTOSI, San Agustín</option>
+                <option value="Toro_Toro">POTOSI, Toro Toro</option>
+                <option value="San_Pedro">POTOSI, San Pedro</option>
+                <option value="Ravelo">POTOSI, Ravelo</option>
+                <option value="Ocurí">POTOSI, Ocurí</option>
+                <option value="Tahua">POTOSI, Tahua</option>
+                <option value="San_Pablo">POTOSI, San Pablo</option>
+                <option value="Porco">POTOSI, Porco</option>
+                <option value="Yocalla">POTOSI, Yocalla</option>
+                <option value="Urmiri">POTOSI, Urmiri</option>
+                <option value="Tacobamba">POTOSI, Tacobamba</option>
+                <option value="Betanzos">POTOSI, Betanzos</option>
+                <option value="Ckochas">POTOSI, Ckochas</option>
+                <option value="Caripuyo">POTOSI, Caripuyo</option>
+                <option value="Sacaca">POTOSI, Sacaca</option>
+                <option value="Acasio">POTOSI, Acasio</option>
+                <option value="Arampampa">POTOSI, Arampampa</option>
+                <option value="Puna">POTOSI, Puna</option>
+                <option value="Chuquihuta_Ayllu_Jucumani">POTOSI, Chuquihuta Ayllu Jucumani</option>
+                <option value="Colcha_K">POTOSI, Colcha "K"</option>
+                <option value="Caiza_D">POTOSI, Caiza "D"</option>
+                <option value="Chaquí">POTOSI, Chaquí</option>
+                <option value="Vitiche">POTOSI, Vitiche</option>
+                <option value="Cotagaita">POTOSI, Cotagaita</option>
+                <option value="Tinguipaya">POTOSI, Tinguipaya</option>
+                <option value="Chayanta">POTOSI, Chayanta</option>
+                <option value="Atocha">POTOSI, Atocha</option>
+                <option value="San_Pedro_de_Quemes">POTOSI, San Pedro de Quemes</option>
+                <option value="Uncía">POTOSI, Uncía</option>
+                <option value="Villazón">POTOSI, Villazón</option>
+                <option value="Colquechaca">POTOSI, Colquechaca</option>
+                <option value="Jatun_Ayllu_Yura">POTOSI, TIOC-Jatun Ayllu Yura</option>
+                <option value="Tomave">POTOSI, Tomave</option>
+                <option value="Llallagua">POTOSI, Llallagua</option>
+                <option value="Tupiza">POTOSI, Tupiza</option>
+                <option value="Potosi">POTOSI, Potosi</option>
+                <option value="Uyuni">POTOSI, Uyuni</option>
+                <option value="Charagua">SANTA CRUZ, Charagua</option>
+                <option value="Pailón">SANTA CRUZ, Pailón</option>
+                <option value="Buena_Vista">SANTA CRUZ, Buena Vista</option>
+                <option value="San_Carlos">SANTA CRUZ, San Carlos</option>
+                <option value="Concepción">SANTA CRUZ, Concepción</option>
+                <option value="Santa_Rosa">SANTA CRUZ, Santa Rosa</option>
+                <option value="Trigal">SANTA CRUZ, Trigal</option>
+                <option value="Quirusillas">SANTA CRUZ, Quirusillas</option>
+                <option value="Moromoro">SANTA CRUZ, Moromoro</option>
+                <option value="Samaipata">SANTA CRUZ, Samaipata</option>
+                <option value="Saipina">SANTA CRUZ, Saipina</option>
+                <option value="Porongo">SANTA CRUZ, Porongo</option>
+                <option value="Okinawa_Uno">SANTA CRUZ, Okinawa Uno</option>
+                <option value="General_Saavedra">SANTA CRUZ, General Saavedra</option>
+                <option value="Gutiérrez">SANTA CRUZ, Gutiérrez</option>
+                <option value="Fernández_Alonso">SANTA CRUZ, Fernández Alonso</option>
+                <option value="Pampagrande">SANTA CRUZ, Pampagrande</option>
+                <option value="Mairana">SANTA CRUZ, Mairana</option>
+                <option value="Cuatro_Cañadas">SANTA CRUZ, Cuatro Cañadas</option>
+                <option value="San_Ramón">SANTA CRUZ, San Ramón</option>
+                <option value="San_Javier">SANTA CRUZ, San Javier</option>
+                <option value="San_Juan">SANTA CRUZ, San Juan</option>
+                <option value="Colpa_Bélgica">SANTA CRUZ, Colpa Bélgica</option>
+                <option value="El_Carmen_Rivero_Tórrez">SANTA CRUZ, El Carmen Rivero Tórrez</option>
+                <option value="San_Matias">SANTA CRUZ, San Matias</option>
+                <option value="Urubicha">SANTA CRUZ, Urubicha</option>
+                <option value="San_Pedro">SANTA CRUZ, San Pedro</option>
+                <option value="San_Antonio_de_Lomerio">SANTA CRUZ, San Antonio de Lomerio</option>
+                <option value="El_Puente">SANTA CRUZ, El Puente</option>
+                <option value="Comarapa">SANTA CRUZ, Comarapa</option>
+                <option value="Postrervalle">SANTA CRUZ, Postrervalle</option>
+                <option value="Cabezas">SANTA CRUZ, Cabezas</option>
+                <option value="San_Miguel">SANTA CRUZ, San Miguel</option>
+                <option value="San_Rafael">SANTA CRUZ, San Rafael</option>
+                <option value="Boyuibe">SANTA CRUZ, Boyuibe</option>
+                <option value="Pucará">SANTA CRUZ, Pucará</option>
+                <option value="Lagunillas">SANTA CRUZ, Lagunillas</option>
+                <option value="Cuevo">SANTA CRUZ, Cuevo</option>
+                <option value="Robore">SANTA CRUZ, Robore</option>
+                <option value="San_Jose_de_Chiquitos">SANTA CRUZ, San Jose de Chiquitos</option>
+                <option value="Santa_Cruz_de_la_Sierra">SANTA CRUZ, Santa Cruz de la Sierra</option>
+                <option value="Portachuelo">SANTA CRUZ, Portachuelo</option>
+                <option value="Puerto_Quijarro">SANTA CRUZ, Puerto Quijarro</option>
+                <option value="Vallegrande">SANTA CRUZ, Vallegrande</option>
+                <option value="La_Guardia">SANTA CRUZ, La Guardia</option>
+                <option value="El_Torno">SANTA CRUZ, El Torno</option>
+                <option value="Cotoca">SANTA CRUZ, Cotoca</option>
+                <option value="Montero">SANTA CRUZ, Montero</option>
+                <option value="Warnes">SANTA CRUZ, Warnes</option>
+                <option value="Mineros">SANTA CRUZ, Mineros</option>
+                <option value="Yapacani">SANTA CRUZ, Yapacani</option>
+                <option value="Puerto_Suarez">SANTA CRUZ, Puerto Suarez</option>
+                <option value="San_Ignacio_de_Velasco">SANTA CRUZ, San Ignacio de Velasco</option>
+                <option value="Ascencion_de_Guarayos">SANTA CRUZ, Ascencion de Guarayos</option>
+                <option value="San_Julian">SANTA CRUZ, San Julian</option>
+                <option value="Camiri">SANTA CRUZ, Camiri</option>
+                <option value="Uriondo">TARIJA, Uriondo</option>
+                <option value="Yunchará">TARIJA, Yunchará</option>
+                <option value="Caraparí">TARIJA, Caraparí</option>
+                <option value="San_Lorenzo">TARIJA, San Lorenzo</option>
+                <option value="El_Puente">TARIJA, El Puente</option>
+                <option value="Entre_Ríos">TARIJA, Entre Ríos</option>
+                <option value="Padcaya">TARIJA, Padcaya</option>
+                <option value="Yacuiba">TARIJA, Yacuiba</option>
+                <option value="Tarija">TARIJA, Tarija</option>
+                <option value="Villamontes">TARIJA, Villamontes</option>
+                <option value="Bermejo">TARIJA, Bermejo</option>
+                
+                
+            </select>
+        </div>
+    </section>
+    <br>
+
+    <div id="map"></div>
+
+<div class="" style="background-color: black;">
+  <h5 style="text-align: center; font-size: 40px; color: rgb(102, 162, 211); font-family: 'Roboto Slab', serif;" data-wow-duration="1s">Contactos</h5>
+
+  <div style="display: flex;">
+    <img style="height: 90px; border-radius: 8px; margin-left: 50px;" src="imagen/fam.jpg" alt="">
+    <img style="height: 90px; border-radius: 8px; margin-left: 50px" src="imagen/amb.png" alt="">
+    <div style="color: rgb(255, 255, 255); margin-left: 15%;">
+    <p><b>Direccion:</b> <br> Av. 14 de Septiembre Nº 6154 (Obrajes),</p>
+    <p><b>Telefono:</b> <br> +591 6-701-0202 (WhatsApp)
+      <br>+800 10-2277 (Línea Gratuita)
+      <br>+591 2-278-9114 (Línea Telefónica)
+      <br>+591 2-278-2106 (Fax)
+    </p>
+    <p>Correo: contacto@fam.org.bo</p>
+    </div>
+    <div style="margin-left: 200px;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d721.4133339204917!2d-68.1024664233064!3d-16.528570227336694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses-419!2sbo!4v1743702727006!5m2!1ses-419!2sbo" width="400" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+     </div>
+
+  </div>
+
+ <div>
+  <img style="height: 60px; border-radius: 8px; margin-left: 50px" src="imagen/helvetas.jpg" alt="">
+  <img style="height: 60px; border-radius: 8px; margin-left: 50px" src="imagen/ministerio.jpg" alt="">
+  <p>
+    <b style="color: rgb(255, 255, 255); margin-left: 30%;">
+      MOPSV – DIRECCIÓN GENERAL DE ORDENAMIENTO URBANO
+    </b>
+  </p>
+ </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+      $('#municipioSelect').select2();
+  });
+  </script>
+    <script type="text/javascript", src="js/zoom.js"></script>
+    <script type="text/javascript", src="js/mapa.js"></script>
+</body>
+</html>

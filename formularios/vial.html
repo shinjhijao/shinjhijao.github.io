@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datos Generales</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="stylo1.css">
+       <!-- Incluir select2 CSS y JS -->
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+       <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+</head>
+
+<body>
+
+  <section>
+    <div style="background-color:#383838;height: 50px;">
+      <ul class="menu">
+        <a href="http://localhost:8080/PlataformaSEL/formularios.html"
+          style="margin-right: 30%; color: rgb(255, 255, 255); text-decoration: none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+            class="bi bi-person-fill-exclamation" viewBox="0 0 16 16">
+            <path
+              d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4" />
+            <path
+              d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-3.5-2a.5.5 0 0 0-.5.5v1.5a.5.5 0 0 0 1 0V11a.5.5 0 0 0-.5-.5m0 4a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1" />
+          </svg>Identificarse</a>
+        <li>
+          <a href="http://localhost:8080/PlataformaSEL/index.html"><strong>INICIO</strong></a>
+        </li>
+        <li>
+          <a href="http://localhost:8080/PlataformaSEL/AreaEconomica.html"><b>ÁREA ECONÓMICA</b></a>
+        </li>
+        <li>
+          <a href="http://localhost:8080/PlataformaSEL/Vialidad.html"><b>COMUNICACIÓN Y VIALIDAD</b></a>
+        </li>
+        <li>
+          <a href="http://localhost:8080/PlataformaSEL/Cuenca.html"><b>CUENCAS</b></a>
+        </li>
+        <li>
+          <a href="http://localhost:8080/PlataformaSEL/naturales.html"><b>RECURSOS NATURALES</b></a>
+        </li>
+
+        <li>
+          <a href="http://localhost:8080/PlataformaSEL/preguntas.html"><b>PREGUNTAS</a>
+        </li>
+      </ul>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>DATOS DE VINCULACIÓN VIAL</h2>
+    <p style="margin-left: 8%;">
+      Por favor seleccione un muncicipios segun el departamento corresponda:
+    </p>
+    <div>
+      <form action="vial.php" method="post">
+        <label style="margin-left: 10%;" for="nombre">Identificador:</label>
+        <input class="form-group" id="miInput" type="number" name="ident" >
+
+        <label style="margin-left: 10%;" for="miSelect"> seleccione un Municipio:</label>
+
+        <select id="miSelect" onchange="identificaId()" name="prov" required>
+          <option value="">Elija una Opcion</option>
+          <option value="10101">CHUQUISACA Sucre</option>
+          <option value="10102">CHUQUISACA Yotala</option>
+          <option value="10103">CHUQUISACA Poroma</option>
+          <option value="10201">CHUQUISACA Azurduy</option>
+          <option value="10202">CHUQUISACA Tarvita</option>
+          <option value="10301">CHUQUISACA Zudañez</option>
+          <option value="10302">CHUQUISACA Presto</option>
+          <option value="10303">CHUQUISACA Mojocoya</option>
+          <option value="10304">CHUQUISACA Icla</option>
+          <option value="10401">CHUQUISACA Padilla</option>
+          <option value="10402">CHUQUISACA Tomina</option>
+          <option value="10403">CHUQUISACA Sopachuy</option>
+          <option value="10404">CHUQUISACA Alcalá</option>
+          <option value="10405">CHUQUISACA El Villar</option>
+          <option value="10501">CHUQUISACA Monteagudo</option>
+          <option value="10502">CHUQUISACA Huacareta</option>
+          <option value="10601">CHUQUISACA Tarabuco</option>
+          <option value="10602">CHUQUISACA Yamparáez</option>
+          <option value="10701">CHUQUISACA Camargo</option>
+          <option value="10702">CHUQUISACA San Lucas</option>
+          <option value="10703">CHUQUISACA Incahuasi</option>
+          <option value="10704">CHUQUISACA Villa Charcas</option>
+          <option value="10801">CHUQUISACA Villa Serrano</option>
+          <option value="10901">CHUQUISACA Villa Abecia</option>
+          <option value="10902">CHUQUISACA Culpina</option>
+          <option value="10903">CHUQUISACA Las Carreras</option>
+          <option value="11001">CHUQUISACA Villa Vaca Guzmán</option>
+          <option value="11002">CHUQUISACA TIOC Guarani Chaqueño de Huacaya</option>
+          <option value="11003">CHUQUISACA Macharetí</option>
+          <option value="20101">LA PAZ Nuestra Señora de La Paz</option>
+          <option value="20102">LA PAZ Palca</option>
+          <option value="20103">LA PAZ Mecapaca</option>
+          <option value="20104">LA PAZ Achocalla</option>
+          <option value="20105">LA PAZ El Alto</option>
+          <option value="20201">LA PAZ Achacachi</option>
+          <option value="20202">LA PAZ Villa Ancoraimes</option>
+          <option value="20203">LA PAZ Huarina</option>
+          <option value="20204">LA PAZ Santiago de Huata</option>
+          <option value="20205">LA PAZ Huatajata</option>
+          <option value="20206">LA PAZ Chua Cocani</option>
+          <option value="20301">LA PAZ Corocoro</option>
+          <option value="20302">LA PAZ Caquiaviri</option>
+          <option value="20303">LA PAZ Calacoto</option>
+          <option value="20304">LA PAZ Comanche</option>
+          <option value="20305">LA PAZ Charaña</option>
+          <option value="20306">LA PAZ Waldo Ballivian</option>
+          <option value="20307">LA PAZ Nazacara de Pacajes</option>
+          <option value="20308">LA PAZ Santiago de Callapa</option>
+          <option value="20401">LA PAZ Puerto Acosta</option>
+          <option value="20402">LA PAZ Mocomoco</option>
+          <option value="20403">LA PAZ Puerto Mayor de Carabuco</option>
+          <option value="20404">LA PAZ Humanata</option>
+          <option value="20405">LA PAZ Escoma</option>
+          <option value="20501">LA PAZ Chuma</option>
+          <option value="20502">LA PAZ Ayata</option>
+          <option value="20503">LA PAZ Aucapata</option>
+          <option value="20601">LA PAZ Sorata</option>
+          <option value="20602">LA PAZ Guanay</option>
+          <option value="20603">LA PAZ Tacacoma</option>
+          <option value="20604">LA PAZ Quiabaya</option>
+          <option value="20605">LA PAZ Combaya</option>
+          <option value="20606">LA PAZ Tipuani</option>
+          <option value="20607">LA PAZ Mapiri</option>
+          <option value="20608">LA PAZ Teoponte</option>
+          <option value="20701">LA PAZ Apolo</option>
+          <option value="20702">LA PAZ Pelechuco</option>
+          <option value="20801">LA PAZ Viacha</option>
+          <option value="20802">LA PAZ Puerto Mayor de Guaqui</option>
+          <option value="20803">LA PAZ Tiahuanacu</option>
+          <option value="20804">LA PAZ Desaguadero</option>
+          <option value="20805">LA PAZ La (Marka) San Andrés de Machaca</option>
+          <option value="20806">LA PAZ Jesús de Machaka</option>
+          <option value="20807">LA PAZ Taraco</option>
+          <option value="20901">LA PAZ Luribay</option>
+          <option value="20902">LA PAZ Sapahaqui</option>
+          <option value="20903">LA PAZ Yaco</option>
+          <option value="20904">LA PAZ Malla</option>
+          <option value="20905">LA PAZ Cairoma</option>
+          <option value="21001">LA PAZ Inquisivi</option>
+          <option value="21002">LA PAZ Quime</option>
+          <option value="21003">LA PAZ Cajuata</option>
+          <option value="21004">LA PAZ Colquiri</option>
+          <option value="21005">LA PAZ Ichoca</option>
+          <option value="21006">LA PAZ Villa Libertad Licoma</option>
+          <option value="21101">LA PAZ Chulumani</option>
+          <option value="21102">LA PAZ Irupana</option>
+          <option value="21103">LA PAZ Yanacachi</option>
+          <option value="21104">LA PAZ Palos Blancos</option>
+          <option value="21105">LA PAZ La Asunta</option>
+          <option value="21201">LA PAZ Pucarani</option>
+          <option value="21202">LA PAZ Laja</option>
+          <option value="21203">LA PAZ Batallas</option>
+          <option value="21204">LA PAZ Puerto Pérez</option>
+          <option value="21301">LA PAZ Sicasica</option>
+          <option value="21302">LA PAZ Umala</option>
+          <option value="21303">LA PAZ Ayo Ayo</option>
+          <option value="21304">LA PAZ Calamarca</option>
+          <option value="21305">LA PAZ Patacamaya</option>
+          <option value="21306">LA PAZ Colquencha</option>
+          <option value="21307">LA PAZ Collana</option>
+          <option value="21401">LA PAZ Coroico</option>
+          <option value="21402">LA PAZ Coripata</option>
+          <option value="21501">LA PAZ Ixiamas</option>
+          <option value="21502">LA PAZ San Buenaventura</option>
+          <option value="21601">LA PAZ Charazani</option>
+          <option value="21602">LA PAZ Curva</option>
+          <option value="21701">LA PAZ Copacabana</option>
+          <option value="21702">LA PAZ San Pedro de Tiquina</option>
+          <option value="21703">LA PAZ Tito Yupanqui</option>
+          <option value="21801">LA PAZ San Pedro de Curahuara</option>
+          <option value="21802">LA PAZ Papel Pampa</option>
+          <option value="21803">LA PAZ Chacarilla</option>
+          <option value="21901">LA PAZ Santiago de Machaca</option>
+          <option value="21902">LA PAZ Catacora</option>
+          <option value="22001">LA PAZ Caranavi</option>
+          <option value="22002">LA PAZ Alto Beni</option>
+          <option value="30101">COCHABAMBA Cochabamba</option>
+          <option value="30201">COCHABAMBA Aiquile</option>
+          <option value="30202">COCHABAMBA Pasorapa</option>
+          <option value="30203">COCHABAMBA Omereque</option>
+          <option value="30301">COCHABAMBA Ayopaya</option>
+          <option value="30302">COCHABAMBA Morochata</option>
+          <option value="30303">COCHABAMBA Cocapata</option>
+          <option value="30401">COCHABAMBA Tarata</option>
+          <option value="30402">COCHABAMBA Anzaldo</option>
+          <option value="30403">COCHABAMBA Arbieto</option>
+          <option value="30404">COCHABAMBA Sacabamba</option>
+          <option value="30501">COCHABAMBA Arani</option>
+          <option value="30502">COCHABAMBA Vacas</option>
+          <option value="30601">COCHABAMBA Arque</option>
+          <option value="30602">COCHABAMBA Tacopaya</option>
+          <option value="30701">COCHABAMBA Capinota</option>
+          <option value="30702">COCHABAMBA Santivañez</option>
+          <option value="30703">COCHABAMBA Sicaya</option>
+          <option value="30801">COCHABAMBA Cliza</option>
+          <option value="30802">COCHABAMBA Toco</option>
+          <option value="30803">COCHABAMBA Tolata</option>
+          <option value="30901">COCHABAMBA Quillacollo</option>
+          <option value="30902">COCHABAMBA Sipesipe</option>
+          <option value="30903">COCHABAMBA Tiquipaya</option>
+          <option value="30904">COCHABAMBA Vinto</option>
+          <option value="30905">COCHABAMBA Colcapirhua</option>
+          <option value="31001">COCHABAMBA Sacaba</option>
+          <option value="31002">COCHABAMBA Colomi</option>
+          <option value="31003">COCHABAMBA Villa Tunari</option>
+          <option value="31101">COCHABAMBA Tapacarí</option>
+          <option value="31201">COCHABAMBA Totora</option>
+          <option value="31202">COCHABAMBA Pojo</option>
+          <option value="31203">COCHABAMBA Pocona</option>
+          <option value="31204">COCHABAMBA Chimoré</option>
+          <option value="31205">COCHABAMBA Puerto Villarroel</option>
+          <option value="31206">COCHABAMBA Entre Ríos</option>
+          <option value="31301">COCHABAMBA Mizque</option>
+          <option value="31302">COCHABAMBA Vila Vila</option>
+          <option value="31303">COCHABAMBA Alalay</option>
+          <option value="31304">COCHABAMBA TIOC-Raqaypampa</option>
+          <option value="31401">COCHABAMBA Punata</option>
+          <option value="31402">COCHABAMBA Villa Rivero</option>
+          <option value="31403">COCHABAMBA San Benito</option>
+          <option value="31404">COCHABAMBA Tacachi</option>
+          <option value="31405">COCHABAMBA Villa Gualberto Villarroel</option>
+          <option value="31501">COCHABAMBA Bolivar</option>
+          <option value="31601">COCHABAMBA Tiraque</option>
+          <option value="31602">COCHABAMBA Shinahota</option>
+          <option value="40101">ORURO Oruro</option>
+          <option value="40102">ORURO Caracollo</option>
+          <option value="40103">ORURO El Choro</option>
+          <option value="40104">ORURO Paria</option>
+          <option value="40201">ORURO Challapata</option>
+          <option value="40202">ORURO Santuario de Quillacas</option>
+          <option value="40301">ORURO Corque</option>
+          <option value="40302">ORURO Choquecota</option>
+          <option value="40401">ORURO Curahuara de Carangas</option>
+          <option value="40402">ORURO Turco</option>
+          <option value="40501">ORURO Huachacalla</option>
+          <option value="40502">ORURO Escara</option>
+          <option value="40503">ORURO Cruz de Machacamarca</option>
+          <option value="40504">ORURO Yunguyo del Litoral</option>
+          <option value="40505">ORURO Esmeralda</option>
+          <option value="40601">ORURO Poopó</option>
+          <option value="40602">ORURO Pazña</option>
+          <option value="40603">ORURO Antequera</option>
+          <option value="40701">ORURO Huanuni</option>
+          <option value="40702">ORURO Machacamarca</option>
+          <option value="40801">ORURO Salinas de Garci Mendoza</option>
+          <option value="40802">ORURO Pampa Aullagas</option>
+          <option value="40901">ORURO Sabaya</option>
+          <option value="40902">ORURO Coipasa</option>
+          <option value="40903">ORURO Uru Chipaya</option>
+          <option value="41001">ORURO Toledo</option>
+          <option value="41101">ORURO Eucaliptus</option>
+          <option value="41201">ORURO Andamarca</option>
+          <option value="41202">ORURO Belén de Andamarca</option>
+          <option value="41301">ORURO Totora</option>
+          <option value="41401">ORURO Santiago de Huari</option>
+          <option value="41501">ORURO La Rivera</option>
+          <option value="41502">ORURO Todos Santos</option>
+          <option value="41503">ORURO Carangas</option>
+          <option value="41601">ORURO Santiago de Huayllamarca</option>
+          <option value="50101">POTOSI Potosí</option>
+          <option value="50102">POTOSI Tinguipaya</option>
+          <option value="50103">POTOSI Yocalla</option>
+          <option value="50104">POTOSI Urmiri</option>
+          <option value="50201">POTOSI Uncía</option>
+          <option value="50202">POTOSI Chayanta</option>
+          <option value="50203">POTOSI Llallagua</option>
+          <option value="50204">POTOSI Chuquihuta Ayllu Jucumani</option>
+          <option value="50301">POTOSI Betanzos</option>
+          <option value="50302">POTOSI Chaquí</option>
+          <option value="50303">POTOSI Tacobamba</option>
+          <option value="50401">POTOSI Colquechaca</option>
+          <option value="50402">POTOSI Ravelo</option>
+          <option value="50403">POTOSI Pocoata</option>
+          <option value="50404">POTOSI Ocurí</option>
+          <option value="50405">POTOSI San Pedro de Macha</option>
+          <option value="50501">POTOSI San Pedro</option>
+          <option value="50502">POTOSI Toro Toro</option>
+          <option value="50601">POTOSI Cotagaita</option>
+          <option value="50602">POTOSI Vitiche</option>
+          <option value="50701">POTOSI Sacaca</option>
+          <option value="50702">POTOSI Caripuyo</option>
+          <option value="50801">POTOSI Tupiza</option>
+          <option value="50802">POTOSI Atocha</option>
+          <option value="50901">POTOSI Colcha "K"</option>
+          <option value="50902">POTOSI San Pedro de Quemes</option>
+          <option value="51001">POTOSI San Pablo</option>
+          <option value="51002">POTOSI Mojinete</option>
+          <option value="51003">POTOSI San Antonio de Esmoruco</option>
+          <option value="51101">POTOSI Puna</option>
+          <option value="51102">POTOSI Caiza "D"</option>
+          <option value="51103">POTOSI Ckochas</option>
+          <option value="51201">POTOSI Uyuni</option>
+          <option value="51202">POTOSI Tomave</option>
+          <option value="51203">POTOSI Porco</option>
+          <option value="51204">POTOSI TIOC-Jatun Ayllu Yura</option>
+          <option value="51301">POTOSI Arampampa</option>
+          <option value="51302">POTOSI Acasio</option>
+          <option value="51401">POTOSI Llica</option>
+          <option value="51402">POTOSI Tahua</option>
+          <option value="51501">POTOSI Villazón</option>
+          <option value="51601">POTOSI San Agustín</option>
+          <option value="60101">TARIJA Tarija</option>
+          <option value="60201">TARIJA Padcaya</option>
+          <option value="60202">TARIJA Bermejo</option>
+          <option value="60301">TARIJA Yacuiba</option>
+          <option value="60302">TARIJA Caraparí</option>
+          <option value="60303">TARIJA Villa Montes</option>
+          <option value="60401">TARIJA Uriondo</option>
+          <option value="60402">TARIJA Yunchará</option>
+          <option value="60501">TARIJA San Lorenzo</option>
+          <option value="60502">TARIJA El Puente</option>
+          <option value="60601">TARIJA Entre Ríos</option>
+          <option value="70101">SANTA CRUZ Santa Cruz de la Sierra</option>
+          <option value="70102">SANTA CRUZ Cotoca</option>
+          <option value="70103">SANTA CRUZ Porongo</option>
+          <option value="70104">SANTA CRUZ La Guardia</option>
+          <option value="70105">SANTA CRUZ El Torno</option>
+          <option value="70201">SANTA CRUZ Warnes</option>
+          <option value="70202">SANTA CRUZ Okinawa Uno</option>
+          <option value="70301">SANTA CRUZ San Ignacio</option>
+          <option value="70302">SANTA CRUZ San Miguel</option>
+          <option value="70303">SANTA CRUZ San Rafael</option>
+          <option value="70401">SANTA CRUZ Buena Vista</option>
+          <option value="70402">SANTA CRUZ San Carlos</option>
+          <option value="70403">SANTA CRUZ Yapacaní</option>
+          <option value="70404">SANTA CRUZ San Juan</option>
+          <option value="70501">SANTA CRUZ San José</option>
+          <option value="70502">SANTA CRUZ Pailón</option>
+          <option value="70503">SANTA CRUZ Roboré</option>
+          <option value="70601">SANTA CRUZ Portachuelo</option>
+          <option value="70602">SANTA CRUZ Santa Rosa</option>
+          <option value="70603">SANTA CRUZ Colpa Bélgica</option>
+          <option value="70701">SANTA CRUZ Lagunillas</option>
+          <option value="70702">SANTA CRUZ Charagua</option>
+          <option value="70703">SANTA CRUZ Cabezas</option>
+          <option value="70704">SANTA CRUZ Cuevo</option>
+          <option value="70705">SANTA CRUZ Gutiérrez</option>
+          <option value="70706">SANTA CRUZ Camiri</option>
+          <option value="70707">SANTA CRUZ Boyuibe</option>
+          <option value="70801">SANTA CRUZ Vallegrande</option>
+          <option value="70802">SANTA CRUZ Trigal</option>
+          <option value="70803">SANTA CRUZ Moromoro</option>
+          <option value="70804">SANTA CRUZ Postrervalle</option>
+          <option value="70805">SANTA CRUZ Pucará</option>
+          <option value="70901">SANTA CRUZ Samaipata</option>
+          <option value="70902">SANTA CRUZ Pampagrande</option>
+          <option value="70903">SANTA CRUZ Mairana</option>
+          <option value="70904">SANTA CRUZ Quirusillas</option>
+          <option value="71001">SANTA CRUZ Montero</option>
+          <option value="71002">SANTA CRUZ General Saavedra</option>
+          <option value="71003">SANTA CRUZ Mineros</option>
+          <option value="71004">SANTA CRUZ Fernández Alonso</option>
+          <option value="71005">SANTA CRUZ San Pedro</option>
+          <option value="71101">SANTA CRUZ Concepción</option>
+          <option value="71102">SANTA CRUZ San Javier</option>
+          <option value="71103">SANTA CRUZ San Julián</option>
+          <option value="71104">SANTA CRUZ San Antonio de Lomerio</option>
+          <option value="71105">SANTA CRUZ San Ramón</option>
+          <option value="71106">SANTA CRUZ Cuatro Cañadas</option>
+          <option value="71201">SANTA CRUZ San Matias</option>
+          <option value="71301">SANTA CRUZ Comarapa</option>
+          <option value="71302">SANTA CRUZ Saipina</option>
+          <option value="71401">SANTA CRUZ Puerto Suarez</option>
+          <option value="71402">SANTA CRUZ Puerto Quijarro</option>
+          <option value="71403">SANTA CRUZ El Carmen Rivero Tórrez</option>
+          <option value="71501">SANTA CRUZ Ascención de Guarayos</option>
+          <option value="71502">SANTA CRUZ Urubicha</option>
+          <option value="71503">SANTA CRUZ El Puente</option>
+          <option value="80101">BENI Trinidad</option>
+          <option value="80102">BENI San Javier</option>
+          <option value="80201">BENI Riberalta</option>
+          <option value="80202">BENI Guayaramerín</option>
+          <option value="80301">BENI Reyes</option>
+          <option value="80302">BENI San Borja</option>
+          <option value="80303">BENI Santa Rosa</option>
+          <option value="80304">BENI Puerto Menor de Rurrenabaque</option>
+          <option value="80401">BENI Santa Ana</option>
+          <option value="80402">BENI Exaltación</option>
+          <option value="80501">BENI San Ignacio</option>
+          <option value="80601">BENI Loreto</option>
+          <option value="80602">BENI San Andrés</option>
+          <option value="80701">BENI San Joaquín</option>
+          <option value="80702">BENI San Ramón</option>
+          <option value="80703">BENI Puerto Siles</option>
+          <option value="80801">BENI Magdalena</option>
+          <option value="80802">BENI Baures</option>
+          <option value="80803">BENI Huacaraje</option>
+          <option value="80901">BENI TIOC-Territorio Indigena Multietnico</option>
+          <option value="90101">PANDO Cobija</option>
+          <option value="90102">PANDO Porvenir</option>
+          <option value="90103">PANDO Bolpebra</option>
+          <option value="90104">PANDO Bella Flor</option>
+          <option value="90201">PANDO Puerto Rico</option>
+          <option value="90202">PANDO San Pedro</option>
+          <option value="90203">PANDO Filadelfia</option>
+          <option value="90301">PANDO Puerto Gonzalo Moreno</option>
+          <option value="90302">PANDO San Lorenzo</option>
+          <option value="90303">PANDO Sena</option>
+          <option value="90401">PANDO Santa Rosa</option>
+          <option value="90402">PANDO Ingavi</option>
+          <option value="90501">PANDO Nueva Esperanza</option>
+          <option value="90502">PANDO Villa Nueva</option>
+          <option value="90503">PANDO Santos Mercado</option>
+        </select>
+
+        <h3>Caminos y Conectividad Vial</h3>
+        <div style="width: 40%; margin-left: 25%;">
+          <br>
+          <div class="form-group">
+            <label for="nom">¿Cuántos kilómetros de caminos existen en el municipio?:</label>
+            <input type="number" placeholder="0,00" step="0.01" min="0" class="form-control" name="kilometros">
+          </div> <br>
+          <div class="form-group">
+            <label for="nom">¿Qué porcentaje de la red vial es asfaltada, empedrada o de tierra?:</label>
+            <input type="number" class="form-control" name="material">
+          </div> <br>
+          <div class="form-group">
+            <label for="nom">¿Existen vías troncales o caminos estratégicos intermunicipales?:</label>
+            <select class="form-control" name="intermunicipal" id="">
+              <option value="">Elija una Opcion</option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+          </div><br>
+          <div class="form-group">
+            <label for="nom">¿Cómo se conectan las comunidades con la capital municipal?:</label>
+            <input type="text" class="form-control" name="conectividad">
+          </div><br>
+          <div class="form-group">
+            <label for="nom">¿Cuál es el estado actual de las rutas principales?:</label>
+            <select class="form-control" name="estado_actual" id="">
+              <option value="">Elija una Opcion</option>
+              <option value="Muy Buena">Muy Buena</option>
+              <option value="Buena">Buena</option>
+              <option value="Mala">Mala</option>
+              <option value="Muy Mala">Muy Mala</option>
+            </select>
+          </div><br>
+          <div class="form-group">
+            <label for="nom">¿Existen proyectos de mejoramiento vial en curso?:</label>
+            <select class="form-control" name="mejora_vial" id="">
+              <option value="">Elija una Opcion</option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+          </div><br>
+          <div class="form-group">
+            <label for="nom">¿Qué instituciones ejecutan obras viales en la región?:</label>
+            <input type="text" class="form-control" name="instituciones">
+          </div><br>
+          <div class="form-group">
+            <label for="nom">¿Se cuenta con transporte público regular?:</label>
+            <select class="form-control" name="trans_publico" id="">
+              <option value="">Elija una Opcion</option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+          </div><br>
+        </div>
+
+
+        <h3>Cobertura de Telefonía</h3>
+        <div style="width: 40%; margin-left: 25%;">
+          <br>
+          <div class="form-group">
+            <label for="nom">¿Qué empresas de telefonía móvil operan en el municipio?:</label>
+            <input type="text" class="form-control" name="telefonia">
+          </div> <br>
+          <div class="form-group">
+            <label for="nom">¿Cuántas antenas o radiobases hay instaladas?:</label>
+            <input type="number" class="form-control" name="radiobase">
+          </div> <br>
+          <div class="form-group">
+            <label for="nom">¿Qué porcentaje del territorio tiene cobertura móvil?:</label>
+            <input type="number" class="form-control" name="cobertura">
+          </div><br>
+          <div class="form-group">
+            <label for="nom">¿Qué tecnologías están disponibles?:</label>
+            <select class="form-control" name="tecnologia" id="">
+              <option value="">Elija una Opcion</option>
+              <option value="2G">2G</option>
+              <option value="3G">3G</option>
+              <option value="4G">4G</option>
+              <option value="LTE">LTE</option>
+            </select>
+          </div><br>
+          <div class="form-group">
+            <label for="nom">¿Existen zonas sin señal o con conectividad limitada?:</label>
+            <select class="form-control" name="conectividad" id="">
+              <option value="">Elija una Opcion</option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+          </div><br>
+          <div class="form-group">
+            <label for="nom">¿La cobertura alcanza a las unidades educativas y centros de salud?:</label>
+            <select class="form-control" name="alcance" id="">
+              <option value="">Elija una Opcion</option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+          </div><br>
+          <div class="form-group">
+            <label for="nom">¿Hay proyectos para ampliar la conectividad?:</label>
+            <select class="form-control" name="proyectos" id="">
+              <option value="">Elija una Opcion</option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+          </div><br>
+
+        </div>
+
+        <h3>Conectividad a Internet</h3>
+        <div style="width: 40%; margin-left: 25%;">
+          <br>
+          <div class="form-group">
+            <label for="nom">¿Qué operadores de internet fijo o móvil brindan servicio?:</label>
+            <input type="text" class="form-control" name="internet">
+          </div> <br>
+          <div class="form-group">
+            <label for="nom">¿Qué porcentaje de la población accede a internet?:</label>
+            <input type="number" class="form-control" name="pob_internet">
+          </div> <br>
+          <div class="form-group">
+            <label for="nom">¿Existe cobertura de internet en áreas rurales?:</label>
+            <select class="form-control" name="internet_rural" id="">
+              <option value="">Elija una Opcion</option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+          </div><br>
+          <div class="form-group">
+            <label for="nom">¿Qué velocidad promedio tienen los usuarios?:</label>
+            <input type="number" class="form-control" name="velocidad">
+          </div><br>
+          <div class="form-group">
+            <label for="nom">¿Hay puntos de acceso gratuito (plazas, escuelas, centros tecnológicos)?:</label>
+            <select class="form-control" name="acceso_gratuito" id="">
+              <option value="">Elija una Opcion</option>
+              <option value="Plazas">Plazas</option>
+              <option value="Escuelas">Escuelas</option>
+              <option value="Centros Tecnológicos">Escuelas</option>
+            </select>
+          </div><br>
+
+          <div class="form-group">
+            <label for="nom">¿Qué centros públicos cuentan con conexión?:</label>
+            <input type="text" class="form-control" name="centros_publicos">
+          </div><br>
+          <div class="form-group">
+            <label for="nom">¿Existen redes comunitarias o Wi-Fi municipal?:</label>
+            <select class="form-control" name="wifi_municipal" id="">
+              <option value="">Elija una Opcion</option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+          </div><br>
+
+        </div>
+
+        <h3>Infraestructura Complementaria</h3>
+        <div style="width: 40%; margin-left: 25%;">
+          <br>
+          <div class="form-group">
+            <label for="nom">¿Hay centros de datos municipales o nodos de fibra óptica?:</label>
+            <select class="form-control" name="nodos" id="">
+              <option value="">Elija una Opcion</option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+          </div><br>
+          <div class="form-group">
+            <label for="nom">¿Qué equipamiento tecnológico tiene la alcaldía para gestión?:</label>
+            <input type="text" class="form-control" name="equi_alcaldia">
+          </div> <br>
+          <div class="form-group">
+            <label for="nom">¿Hay estaciones meteorológicas, repetidoras de radio o TV?:</label>
+            <select class="form-control" name="estaciones" id="">
+              <option value="">Elija una Opcion</option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+          </div><br>
+          <div class="form-group">
+            <label for="nom">¿Se cuenta con sistemas de georreferenciación o SIG local?:</label>
+            <select class="form-control" name="sig" id="">
+              <option value="">Elija una Opcion</option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+          </div><br>
+          <div class="form-group">
+            <label for="nom">¿Se promueve la alfabetización digital o acceso a plataformas virtuales?:</label>
+            <select class="form-control" name="alfabetizacion" id="">
+              <option value="">Elija una Opcion</option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+          </div><br>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success">Enviar</button>
+ 
+          </div>
+        </div>
+      </form>
+    </div>
+  </section> <br>
+
+  <script>
+    function identificaId() {
+      var select = document.getElementById("miSelect");
+      var input = document.getElementById("miInput");
+      input.value = select.value;
+
+    }
+  </script>
+
+<script>
+  $(document).ready(function() {
+     $('#miSelect').select2();
+  });
+ </script>
+
+
+
+  <div class="" style="background-color: black;">
+    <h5 style="text-align: center; font-size: 40px; color: rgb(102, 162, 211); font-family: 'Roboto Slab', serif;"
+      data-wow-duration="1s">Contactos</h5>
+
+    <div style="display: flex;">
+      <img style="height: 90px; border-radius: 8px; margin-left: 50px;" src="imagenes/fam.jpg" alt="">
+      <img style="height: 90px; border-radius: 8px; margin-left: 50px" src="imagenes/amb.png" alt="">
+      <div style="color: rgb(255, 255, 255); margin-left: 15%;">
+        <p><b>Direccion:</b> <br> Av. 14 de Septiembre Nº 6154 (Obrajes),</p>
+        <p><b>Telefono:</b> <br> +591 6-701-0202 (WhatsApp)
+          <br>+800 10-2277 (Línea Gratuita)
+          <br>+591 2-278-9114 (Línea Telefónica)
+          <br>+591 2-278-2106 (Fax)
+        </p>
+        <p>Correo: contacto@fam.org.bo</p>
+      </div>
+      <div style="margin-left: 200px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d721.4133339204917!2d-68.1024664233064!3d-16.528570227336694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses-419!2sbo!4v1743702727006!5m2!1ses-419!2sbo"
+          width="400" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      </div>
+
+    </div>
+
+    <div>
+      <img style="height: 60px; border-radius: 8px; margin-left: 50px" src="imagenes/helvetas.jpg" alt="">
+      <img style="height: 60px; border-radius: 8px; margin-left: 50px" src="imagenes/ministerio.jpg" alt="">
+      <p>
+        <b style="color: rgb(255, 255, 255); margin-left: 30%;">
+          MOPSV – DIRECCIÓN GENERAL DE ORDENAMIENTO URBANO
+        </b>
+      </p>
+    </div>
+  </div>
+</body>
+
+</html>
