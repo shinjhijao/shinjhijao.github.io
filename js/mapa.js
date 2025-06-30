@@ -44,6 +44,43 @@ let Resultado = L.geoJson(json_reporteN_0,{
  
 }).addTo(map)
 
+//resultados municipios
+function popupSalud(feature, layer){
+    if(feature.properties && feature.properties.SECTOR){
+        layer.bindPopup("<strong>SECTOR: </stronge>" + feature.properties.SECTOR
+            + "<br><strong>TIPO: </strong>" + feature.properties.TIPO
+            + "<br><strong>SUBTIPO: </strong>" + feature.properties.SUBTIPO
+            + "<br><strong>NOMBRE: </strong>" + feature.properties.NOMBRE
+            + "<br><strong>OPERADOR: </strong>" + feature.properties.OPERADOR
+        );
+    }
+}
+
+// estilo capa
+
+        function style_Edificios_Salud_0_0() {
+            return {
+
+        opacity: 1,
+        color: 'rgba(0,0,0,1.0)',
+        dashArray: '',
+        lineCap: 'round',
+        lineJoin: 'round',
+        weight: 1,
+        fillOpacity: 0,
+        interactive: true,
+
+            }
+        }
+
+//L.geoJson(reporte).addTo(map)
+
+let Salud = L.geoJson(json_Edificios_Salud_0,{
+    onEachFeature: popupSalud,
+    style: style_Edificios_Salud_0_0
+})
+
+
 
 
 // flyto ir al municiopio
@@ -406,8 +443,24 @@ var municipios = {
         }
     }
 
+
+
   //control de capas
 
+  const layers = {
 
+    Resultado: Resultado,
+    Salud: Salud
+   
+
+};
+
+function toggleLayer(checkbox, layer) {
+    if (checkbox.checked) {
+      map.addLayer(layer);
+    } else {
+      map.removeLayer(layer);
+    }
+  }
 
  
