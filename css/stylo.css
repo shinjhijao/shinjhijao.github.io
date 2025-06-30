@@ -1,4 +1,49 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,100,300,400italic,700|EB+Garamond);
+.nav-link {
+ color: #868686;
+ font-size: 15px;
+}
+
+.nav-link:hover {
+color: #6EC6D8;
+}
+
+.imagen-titulo {
+    background-color: #2b2828;
+    display: flex;
+    justify-content: center;
+}
+
+/* animacion de entrada */
+@keyframes scroll {
+  from {
+    opacity: 0;
+    scale: 10%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+.cuadro {
+  view-timeline-name: --texto;
+  view-timeline-axis: block;
+  animation-timeline: --texto;
+  animation-name: scroll;
+  animation-range: entry 10% cover 50%;
+  animation-fill-mode: both;
+}
+
+.chart-container {
+  width: 80%;
+  height: 200px;
+}
+
+
+
+
+
+
+
 
 .menu {
   display: flex;
@@ -22,15 +67,14 @@
     position: relative;
     height: 100vh;
     width: 100%;
-    color: aliceblue;
-    text-align: center;
-    background: url(../imagen/fondo2.gif) no-repeat center center fixed;
+    background: url(../imagen/fondo.gif) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     padding-top: 10%;
   }
+
 
   .hero1 {
     position: relative;
@@ -86,11 +130,13 @@
     background-size: cover;
     padding-top: 10%;
   }
+
+
   h1#title-1 {
     text-align: center;
     font-size: 80px;
     color: rgba(255, 255, 255, 0.9);
-    font-family: 'EB Garamond', serif;
+    font-family: Montserrat;
     text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 1);
     text-transform: uppercase;
     letter-spacing: 10px;
@@ -98,7 +144,7 @@
   }
 
  h2 {
-  font-family: 'Roboto', sans-serif;
+
   font-weight: 100;
   color: #3c77ff;
   font-size: 40px;
@@ -108,7 +154,7 @@
 }
 
 h3 {
-  font-family: 'Roboto', sans-serif;
+
   font-weight: 100;
   color: #000000;
   font-size: 30px;
@@ -191,14 +237,12 @@ p {
 
 
 #map {
-  display: flex;
-  margin: auto;
-  width: 75%;
+  width: 100%;
   height: 670px;
-  border-color: rgb(158, 158, 158);
+  border-color: rgb(0, 0, 0);
   border: 1px;
   border-style: solid;
- 
+  margin-left: 30px;
 }
 
 .pregunta {
@@ -230,4 +274,27 @@ p {
   margin-top: -1px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   text-align: justify;
+}
+
+.redes a{
+color: #000000;
+font-size: 23px;
+margin-left: 20px;
+}
+
+.redes a :hover{
+
+  color: #ffffff;
+}
+
+.capas {
+    width: 25%;
+    padding: 0.5%;
+    border-style: solid;
+    border-color: #dcdcdc;
+    border-width: 1px;
+}
+
+.socios a :hover{
+    filter: grayscale(0%);
 }
