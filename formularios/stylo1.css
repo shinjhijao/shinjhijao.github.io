@@ -1,91 +1,23 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,100,300,400italic,700|EB+Garamond);
-
-.menu {
-  display: flex;
-  list-style-type: none;
-  padding: 11px;
-  justify-content: center;
-}
-.menu li a{
-  font-size: 15px;
-  text-decoration: none;
-  color: #6EC6D8;
-  margin-left: 25px;
+.nav-link {
+ color: #868686;
+ font-size: 15px;
 }
 
-.menu li a :hover{
-  color: #ffffff;
-  border-bottom: 2px solid #ffffff;
+.nav-link:hover {
+color: #6EC6D8;
 }
 
-.hero {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    color: aliceblue;
-    text-align: center;
-    background: url(../imagen/fondo1.gif) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    padding-top: 10%;
-  }
+.imagen-titulo {
+    background-color: #2b2828;
+    display: flex;
+    justify-content: center;
+}
 
-  .hero1 {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    color: aliceblue;
-    text-align: center;
-    background: url(../imagen/fondo2.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    padding-top: 10%;
-  }
 
-  .hero2 {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    color: aliceblue;
-    text-align: center;
-    background: url(../imagen/vial2.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    padding-top: 10%;
-  }
-  .hero3 {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    color: aliceblue;
-    text-align: center;
-    background: url(../imagen/cuenca.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    padding-top: 10%;
-  }
 
-  .hero4 {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    color: aliceblue;
-    text-align: center;
-    background: url(../imagen/comunicacion.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    padding-top: 10%;
-  }
+
+
+
   h1#title-1 {
     text-align: center;
     font-size: 80px;
