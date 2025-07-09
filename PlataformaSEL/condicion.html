@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Relacionado</title>
+    <script>
+        function actualizarOpciones() {
+            var categoria = document.getElementById("categoria").value;
+            var opciones = document.getElementById("opcion");
+
+            opciones.innerHTML = ""; // Limpiar el campo
+
+            var datos = {
+                frutas: ["Manzana", "Banana", "Naranja"],
+                verduras: ["Zanahoria", "Lechuga", "Tomate"],
+                cereales: ["Arroz", "Maíz", "Trigo"]
+            };
+
+            if (categoria in datos) {
+                datos[categoria].forEach(item => {
+                    var option = document.createElement("option");
+                    option.value = item;
+                    option.textContent = item;
+                    opciones.appendChild(option);
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+    <label for="categoria">Selecciona una categoría:</label>
+    <select id="categoria" onchange="actualizarOpciones()" >
+        <option value="">--Selecciona--</option>
+        <option value="frutas">Frutas</option>
+        <option value="verduras">Verduras</option>
+        <option value="cereales">Cereales</option>
+    </select>
+
+    <label for="opcion">Selecciona una opción:</label>
+    <select id="opcion">
+        <option value="">--Primero elige una categoría--</option>
+    </select>
+</body>
+</html>
